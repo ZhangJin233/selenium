@@ -11,12 +11,12 @@ import pytesseract
 def get_coder(driver,id):
 
     t = time.time()
-    path = os.path.dirname(os.path.dirname(__file__)) + '//screenshots'
-    picture_name1 = path + '\\' + str(t) +'.png'
+    path = os.path.dirname(os.path.dirname(__file__)) + '/screenshots'
+    picture_name1 = str(t) +'.png'
 
     driver.save_screenshot(picture_name1)
 
-    ce = driver.find_element(By.XPATH,id)
+    ce = driver.find_element(By.ID,id)
     print(ce.location)
     left = ce.location['x']
     top = ce.location['y']
